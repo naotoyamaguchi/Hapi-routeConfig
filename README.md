@@ -20,7 +20,18 @@ The `route` method from an instance of a Hapi server has the following basic ele
 
 ### method
 ---
+The `method` element of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`
 
+```
+server.route({
+	method: 'GET'
+})
+```
+#### OR
+```
+server.route({
+	method: ['GET', 'POST']
+})
 
 ### path
 ---
