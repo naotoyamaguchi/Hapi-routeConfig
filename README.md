@@ -32,6 +32,7 @@ server.route({
 server.route({
 	method: ['GET', 'POST']
 })
+```
 
 ### path
 ---
