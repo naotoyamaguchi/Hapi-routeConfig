@@ -60,6 +60,11 @@ server.route({
 ---
 Finally, the `handler` method of your route will be using a function where the logic of your HTTP call is defined. The function takes in two parameters: `request`, and `reply`.
 
+- The `request` parameter is an object with details about the end user's request, such as path parameters, an associated payload, authentication information, headers, etc.
+
+- The second parameter, `reply`, is the method used to respond to the request. As you see in the following examples, if you wish to respond with a payload you simply pass the payload as a parameter to reply. The payload may be a string, a buffer, a JSON serializable object, or a stream. The result of reply is a response object, that can be chained with additional methods to alter the response before it is sent. For example reply('created').code(201) will send a payload of created with an HTTP status code of 201. You may also set headers, content type, content length, send a redirection response, and many other things that are documented in the API reference.
+
+
 ```
 server.route({
 	method: 'GET',
