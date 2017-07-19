@@ -104,7 +104,7 @@ By requesting `/hello/John/Doe`, the above would return `Hello John Doe!` becaus
 
 ## config
 ---
-Finally, the `config` method of your route is an optional, yet very useful element. This element of your route allows you to configure option such as `validation`, `authentication`, prerequisites, payload processing, and caching options.
+Finally, the `config` method of your route is an optional, yet very useful element. This element of your route allows you to configure option such as `validation`, `authentication`, prerequisites, payload processing, and caching options. There is a list of options [here](https://hapijs.com/api#route-options)
 
 ```
 server.route({
