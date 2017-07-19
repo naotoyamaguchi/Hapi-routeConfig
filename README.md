@@ -22,13 +22,13 @@ The `route` method from an instance of a Hapi server has the following basic ele
 ## method
 The `method` method of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`. This will define the method of HTTP request that you will called upon the `path` element of the server.
 
-```
+```javascript
 server.route({
 	method: 'GET'
 })
 ```
 #### OR with multiple methods..
-```
+```javascript
 server.route({
 	method: ['GET', 'POST']
 })
@@ -38,7 +38,7 @@ server.route({
 ## path
 The `path` method of your route provides the location in which the the HTTP method will be called upon. Although the path location is a string, you may also pass in parameters to create a dynamic path using `{}`.
 
-```
+```javascript
 server.route({
 	method: 'GET',
 	path: '/helloWorld'
@@ -63,7 +63,7 @@ The `handler` method of your route will be using a function where the logic of y
 - The second parameter, `reply`, is the method used to respond to the request. As you see in the following examples, if you wish to respond with a payload you simply pass the payload as a parameter to reply. The payload may be a string, a buffer, a JSON serializable object, or a stream. The result of reply is a response object, that can be chained with additional methods to alter the response before it is sent. For example reply('created').code(201) will send a payload of created with an HTTP status code of 201. You may also set headers, content type, content length, send a redirection response, and many other things that are documented in the API reference.
 
 
-```
+```javascript
 server.route({
 	method: 'GET',
 	path: '/helloWorld',
@@ -75,7 +75,7 @@ server.route({
 
 Using a parameter in your path and reply would look like:
 
-```
+```javascript
 server.route({
 	method: 'GET',
 	path: '/hello/{name}',
@@ -86,7 +86,7 @@ server.route({
 ```
 
 You can even do multi-segment parameters like so:
-```
+```javascript
 server.route({
     method: 'GET',
     path: '/hello/{user*2}',
@@ -103,7 +103,7 @@ By requesting `/hello/John/Doe`, the above would return `Hello John Doe!` becaus
 ## config
 Finally, the `config` method of your route is an optional, yet very useful element. This element of your route allows you to configure option such as `validation`, `authentication`, prerequisites, payload processing, and caching options. There is a list of options [here](https://hapijs.com/api#route-options)
 
-```
+```javascript
 server.route({
     method: 'GET',
     path: '/hello/{user?}',
