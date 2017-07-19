@@ -47,7 +47,7 @@ server.route({
 
 Passing in a parameter would look like:
 
-```
+```javascript
 server.route({
 	method: 'GET',
 	path: 'users/{userName}'
