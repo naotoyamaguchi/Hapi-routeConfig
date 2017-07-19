@@ -3,7 +3,7 @@ Hapi Route Configuration
 
 Once you set up a running Hapi server, you are then able to define routes using a method off of the instance of the `Hapi.Server()` called `route`.
 
-```
+```javascript
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 
