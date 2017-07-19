@@ -39,7 +39,8 @@ server.route({
 ---
 The `path` element of your route provides the location in which the the HTTP method will be called upon. Although the path location is a string, you may also pass in parameters to create a dynamic path using `{}`.
 
-```server.route({
+```
+server.route({
 	method: 'GET',
 	path: '/helloWorld'
 })
@@ -47,7 +48,8 @@ The `path` element of your route provides the location in which the the HTTP met
 
 Passing in a parameter would look like:
 
-```server.route({
+```
+server.route({
 	method: 'GET',
 	path: 'users/{userName}'
 })
