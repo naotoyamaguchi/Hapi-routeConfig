@@ -1,11 +1,16 @@
-Express Gallery
+Hapi Route Configuration
 ===============
 
-Express, Sequelize, HTML5, stored on PostgreSQL
+Once you set up a running Hapi server, you are then able to define routes using a method off of the instance of the Hapi.Server called route.
 
-Use the Express, Sequelize, and *almost* any other library or templating engines you want to fulfill the requirements.
-recommended: Handbars and SASS.
-helpful: Livereload, Gulp for watching compiling SASS
+```
+const Hapi = require('hapi');
+const server = new Hapi.Server();
+
+server.route({
+	
+})
+```
 
 ---
 
