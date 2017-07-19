@@ -16,7 +16,7 @@ server.route({
 
 ## Methods
 
-The `route` method from an instance of a Hapi server has the following basic elements:
+The `route` method from an instance of a Hapi server has the following basic elements: `method`, `path`, `handler`, `config
 
 - `method`
 
