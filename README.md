@@ -87,6 +87,19 @@ server.route({
 })
 ```
 
+You can even do multi-segment parameters like so:
+```
+server.route({
+    method: 'GET',
+    path: '/hello/{user*2}',
+    handler: function (request, reply) {
+        const userParts = request.params.user.split('/');
+        reply('Hello ' + encodeURIComponent(userParts[0]) + ' ' + encodeURIComponent(userParts[1]) + '!');
+    }
+});
+```
+By requesting `/hello/John/Doe`, the above would return `Hello John Doe!` because it splits the `request.params.user` by the `/`.
+
 
 
 ## config
