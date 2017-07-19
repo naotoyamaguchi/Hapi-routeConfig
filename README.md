@@ -14,11 +14,11 @@ server.route({
 
 ---
 
-## Methods
+# Methods
 
 The `route` method from an instance of a Hapi server has the following basic elements: `method`, `path`, `handler`, and `config`. 
 
-### method
+## method
 ---
 The `method` method of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`. This will define the method of HTTP request that you will called upon the `path` element of the server.
 
@@ -35,7 +35,7 @@ server.route({
 ```
 
 
-### path
+## path
 ---
 The `path` method of your route provides the location in which the the HTTP method will be called upon. Although the path location is a string, you may also pass in parameters to create a dynamic path using `{}`.
 
@@ -56,7 +56,7 @@ server.route({
 ```
 
 
-### handler
+## handler
 ---
 The `handler` method of your route will be using a function where the logic of your HTTP call is defined. The function takes in two parameters: `request`, and `reply`.
 
@@ -75,7 +75,7 @@ server.route({
 })
 ```
 
-Using a parameter in your path would look like:
+Using a parameter in your path and reply would look like:
 
 ```
 server.route({
@@ -89,7 +89,7 @@ server.route({
 
 
 
-### config
+## config
 ---
 Finally, the `config` method of your route is an optional, yet very useful element. This element of your route allows you to configure option such as `validation`, `authentication`, prerequisites, payload processing, and caching options.
 
