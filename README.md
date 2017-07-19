@@ -27,7 +27,7 @@ server.route({
 	method: 'GET'
 })
 ```
-#### OR
+#### OR with multiple methods..
 ```
 server.route({
 	method: ['GET', 'POST']
@@ -58,7 +58,7 @@ server.route({
 
 ### handler
 ---
-Finally, the `handler` method of your route will be using a function where the logic of your HTTP call is defined.
+Finally, the `handler` method of your route will be using a function where the logic of your HTTP call is defined. The function takes in two parameters: `request`, and `reply`.
 
 ```
 server.route({
