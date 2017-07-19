@@ -16,11 +16,11 @@ server.route({
 
 ## Methods
 
-The `route` method from an instance of a Hapi server has the following basic elements: `method`, `path`, `handler`, and `config`
+The `route` method from an instance of a Hapi server has the following basic elements: `method`, `path`, `handler`, and `config`. 
 
 ### method
 ---
-The `method` element of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`. This will define the method of HTTP request that you will called upon the `path` element of the server.
+The `method` method of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`. This will define the method of HTTP request that you will called upon the `path` element of the server.
 
 ```
 server.route({
@@ -37,7 +37,7 @@ server.route({
 
 ### path
 ---
-The `path` element of your route provides the location in which the the HTTP method will be called upon. Although the path location is a string, you may also pass in parameters to create a dynamic path using `{}`.
+The `path` method of your route provides the location in which the the HTTP method will be called upon. Although the path location is a string, you may also pass in parameters to create a dynamic path using `{}`.
 
 ```
 server.route({
@@ -58,7 +58,7 @@ server.route({
 
 ### handler
 ---
-Finally, the `handler` method of your route will be using a function where the logic of your HTTP call is defined. The function takes in two parameters: `request`, and `reply`.
+The `handler` method of your route will be using a function where the logic of your HTTP call is defined. The function takes in two parameters: `request`, and `reply`.
 
 - The `request` parameter is an object with details about the end user's request, such as path parameters, an associated payload, authentication information, headers, etc.
 
@@ -75,9 +75,37 @@ server.route({
 })
 ```
 
+Using a parameter in your path would look like:
+
+```
+server.route({
+	method: 'GET',
+	path: '/hello/{name}',
+	handler: function(request, reply){
+		reply('Hello ' + encodeURIComponent(request.params.name) + '!');
+	}
+})
+```
+
 
 
 ### config
 ---
+Finally, the `config` method of your route is an optional, yet very useful element. This element of your route allows you to configure option such as `validation`, `authentication`, prerequisites, payload processing, and caching options.
 
+```
+server.route({
+    method: 'GET',
+    path: '/hello/{user?}',
+    handler: function (request, reply) {
+        const user = request.params.user ? encodeURIComponent(request.params.user) : 'stranger';
+        reply('Hello ' + user + '!');
+    },
+    config: {
+        description: 'Say hello!',
+        notes: 'The user parameter defaults to \'stranger\' if unspecified',
+        tags: ['api', 'greeting']
+    }
+});
+```
 
