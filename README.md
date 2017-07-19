@@ -1,7 +1,7 @@
 Hapi Route Configuration
 ===============
 
-Once you set up a running Hapi server, you are then able to define routes using a method off of the instance of the Hapi.Server called route.
+Once you set up a running Hapi server, you are then able to define routes using a method off of the instance of the `Hapi.Server()` called `route`.
 
 ```
 const Hapi = require('hapi');
@@ -13,6 +13,8 @@ server.route({
 ```
 
 ---
+
+## Methods
 
 Create a multi-user Gallery.
 Any user should be able to access these routes:
