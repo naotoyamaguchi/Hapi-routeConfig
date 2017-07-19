@@ -11,15 +11,13 @@ server.route({
 	
 })
 ```
-
-
-
-
 ---
 
 # Methods
 
 The `route` method from an instance of a Hapi server has the following basic elements: `method`, `path`, `handler`, and `config`. 
+
+</br>
 
 ## method
 The `method` method of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`. This will define the method of HTTP request that you will called upon the `path` element of the server.
