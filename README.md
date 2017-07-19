@@ -16,6 +16,16 @@ server.route({
 
 ## Methods
 
+The `route` method from an instance of a Hapi server has the following basic elements:
+
+- `method`
+
+- `path`
+
+- `handler`
+
+- `config`
+
 Create a multi-user Gallery.
 Any user should be able to access these routes:
 
