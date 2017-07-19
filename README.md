@@ -58,6 +58,18 @@ server.route({
 
 ### handler
 ---
+Finally, the `handler` method of your route will be using a function where the logic of your HTTP call is defined.
+
+```
+server.route({
+	method: 'GET',
+	path: '/helloWorld',
+	handler: function(request, reply){
+		reply('Hello World!')
+	}
+})
+```
+
 
 
 ### config
