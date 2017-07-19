@@ -20,7 +20,7 @@ The `route` method from an instance of a Hapi server has the following basic ele
 
 ### method
 ---
-The `method` element of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`
+The `method` element of the route takes in various valid HTTP methods, or even an array of methods such as `GET`, `POST`, and `DELETE`. This will define the method of HTTP request that you will called upon the `path` element of the server.
 
 ```
 server.route({
@@ -34,8 +34,24 @@ server.route({
 })
 ```
 
+
 ### path
 ---
+The `path` element of your route provides the location in which the the HTTP method will be called upon. Although the path location is a string, you may also pass in parameters to create a dynamic path using `{}`.
+
+```server.route({
+	method: 'GET',
+	path: '/helloWorld'
+})
+```
+
+Passing in a parameter would look like:
+
+```server.route({
+	method: 'GET',
+	path: 'users/{userName}'
+})
+```
 
 
 ### handler
