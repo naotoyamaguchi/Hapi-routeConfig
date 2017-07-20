@@ -53,7 +53,17 @@ server.route({
 	path: 'users/{userName}'
 })
 ```
-
+... and you can access/utilize the parameter with the following
+```javascript
+server.route({
+	method: 'GET',
+	path: 'users/{userName}'
+	handler: function(request, reply){
+		reply(request.params.userName)
+	}
+})
+```
+So hitting `/users/JohnDoe` would return a response of `JohnDoe`
 
 ## handler
 The `handler` method of your route will be using a function where the logic of your HTTP call is defined. The function takes in two parameters: `request`, and `reply`.
